@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Quiz Web App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <!--Timer and Question Number-->
+        <div class="right-section">
+            <span id="timer">30s</span>
+            <span id="qnum">1/20</span>
+        </div>
+        <!--Restart Button-->
+        <div class="left-section">
+            <button id="resart">Restart</button>
+        </div>
+        <!--Question Box-->
+        <div class="question-box">
+            <h2 id="question">What is?</h2>
+        </div>
+        <!--Answer Boxes-->
+        <div class="answers">
+            <button class="answer">A</button>
+            <button class="answer">B</button>
+            <button class="answer">C</button>
+            <button class="answer">D</button>
+        </div>
+    </div>
+    <script src="quiz.js"></script>
+</body>
+</html>
