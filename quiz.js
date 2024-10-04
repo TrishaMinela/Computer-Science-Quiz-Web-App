@@ -72,7 +72,6 @@ let score = 0;
 function Quiz(){
     currentQuestionIndex = 0;
     score = 0;
-    nextButton.innerHTML = "Next";
     Question();
 }
 
