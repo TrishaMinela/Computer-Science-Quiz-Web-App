@@ -27,6 +27,8 @@ body {
     width: 20%;
     height: 200px;
     border-radius: 10px;
+    padding: 20px;
+    font-size: large;
 }
 
 button {
@@ -66,11 +68,14 @@ button:active {
 
 .question-box h2 {
     color: #ffffff;
+    text-align: center;
 }
 
 .topic-box h1 {
     color: #ffffff;
+    text-align: center;
 }
+
 
 /* top */
 

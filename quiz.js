@@ -10,8 +10,6 @@ function setButtonColors(){
     });
 }
 
-setButtonColors();
-
 
 
 
@@ -64,8 +62,8 @@ const questions = [
     }
 ];
 
-const questionElement = document.getElementById("qnum");
-const answerButtons = document.getElementById("answers");
+const questionElement = document.getElementById("question");
+const answerButtons = document.querySelector(".answers");
 const nextButton = document.getElementById("next");
 
 let currentQuestionIndex = 0;
@@ -80,13 +78,18 @@ function Quiz(){
 
 function Question(){
     let currentQuestion = questions[currentQuestionIndex];
-    let questionNum = currentQuestionIndex + 1;
-    questionElement.innerHTML = questionNum + ". " + currentQuestion.question;
+    questionElement.innerHTML = (currentQuestionIndex + 1) + ". " + currentQuestion.question;
+
+    answerButtons.innerHTML = '';
 
     currentQuestion.options.forEach(answer => {
         const button = document.createElement("button");
         button.innerHTML = answer.text;
-        button.classList.add("btn");
-        answer.button.appendChild(button);
+        button.classList.add("answer", "btn");
+        answerButtons.appendChild(button);
     });
+
+    setButtonColors();
 }
+
+Quiz();
