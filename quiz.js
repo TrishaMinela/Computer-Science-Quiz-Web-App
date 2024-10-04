@@ -83,7 +83,7 @@ function Question(){
     answerButtons.innerHTML = '';
 
     randomAnswers(currentQuestion.options);
-    
+
     currentQuestion.options.forEach(answer => {
         const button = document.createElement("button");
         button.innerHTML = answer.text;
@@ -127,3 +127,17 @@ function randomAnswers(answers){
         [answers[i], answers[j]] =  [answers[j], answers[i]]
     }
 }
+
+
+// Event listener for the next button
+nextButton.addEventListener('click', () => {
+    currentQuestionIndex++;
+
+    if(currentQuestionIndex < questions.length){
+        Question();
+        nextButton.style.display = 'none';
+    } else {
+        //Reset Quiz for now
+        Quiz();
+    }
+})
