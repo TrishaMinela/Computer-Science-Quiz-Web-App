@@ -82,6 +82,8 @@ function Question(){
 
     answerButtons.innerHTML = '';
 
+    randomAnswers(currentQuestion.options);
+    
     currentQuestion.options.forEach(answer => {
         const button = document.createElement("button");
         button.innerHTML = answer.text;
@@ -117,3 +119,11 @@ function selectAnswer(answer) {
 }
 
 
+// Randomizing answers
+
+function randomAnswers(answers){
+    for(let i = answers.length -1; i > 0; i--){
+        const j = Math.floor(Math.random() * (i + 1));
+        [answers[i], answers[j]] =  [answers[j], answers[i]]
+    }
+}
