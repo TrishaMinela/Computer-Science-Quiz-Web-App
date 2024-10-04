@@ -8,19 +8,27 @@
 </head>
 <body>
     <div class="quiz-container">
-        <!--Timer and Question Number-->
-        <div class="right-section">
-            <span id="timer">30s</span>
-            <span id="qnum">1/20</span>
+        <div class="top">
+            <!--Timer and Question Number-->
+            <div class="left-section">
+                <div class="timer-box">
+                    <span id="timer">30s</span>
+                </div>
+                <div class="qnum-box">
+                    <span id="qnum">1/20</span>
+                </div>
+            </div>
+            <!--Restart Button-->
+            <div class="right-section">
+                <button id="restart">Restart</button>
+            </div>
         </div>
-        <!--Restart Button-->
-        <div class="left-section">
-            <button id="resart">Restart</button>
-        </div>
+        
         <!--Question Box-->
         <div class="question-box">
             <h2 id="question">What is?</h2>
         </div>
+
         <!--Answer Boxes-->
         <div class="answers">
             <button class="answer">A</button>
