@@ -1,5 +1,5 @@
 //Changing the colors of each answer box
-const colors = ['#38b6ff', '#cb6ce6', '#ffbd59', '#00bf63', '#5ce1e6', '#ff66c4', '#ff5757', '#ff914d'];
+const colors = ['#38b6ff', '#c1ff72', '#7ed957', '#ffb168', '#ff6888', '#68b7ff', '#efdae9', '#cb6ce6', '#ffbd59', '#00bf63', '#5ce1e6', '#ff66c4', '#ff5757', '#ff914d'];
 
 function setButtonColors(){
     const buttons = document.querySelectorAll('.answer');
@@ -11,3 +11,82 @@ function setButtonColors(){
 }
 
 setButtonColors();
+
+
+
+
+//Random Questions
+const questions = [
+    {
+        question: "What is the difference between '==' and '===' in JavaScript?",
+        options: [
+            { text: "'==' checks value and type, while '===' checks only value", correct: false },
+            { text: "'==' checks only value, while '===' checks value and type", correct: true },
+            { text: "Both are the same", correct: false },
+            { text: "'==' is used for comparisons, '===' for assignments", correct: false }
+        ]
+    },
+    {
+        question: "Explain the concept of recursion. Can you provide an example?",
+        options: [
+            { text: "A function calling itself", correct: true },
+            { text: "A loop structure", correct: false },
+            { text: "A type of variable", correct: false },
+            { text: "A method to handle exceptions", correct: false }
+        ]
+    },
+    {
+        question: "What is the purpose of a constructor in object-oriented programming?",
+        options: [
+            { text: "To define variables", correct: false },
+            { text: "To initialize objects", correct: true },
+            { text: "To create a function", correct: false },
+            { text: "To handle errors", correct: false }
+        ]
+    },
+    {
+        question: "What is the difference between an array and an object in JavaScript?",
+        options: [
+            { text: "Arrays can hold only numbers, objects can hold anything", correct: false },
+            { text: "Arrays are indexed by numbers, objects are key-value pairs", correct: true },
+            { text: "Both are the same", correct: false },
+            { text: "Objects are always mutable, arrays are not", correct: false }
+        ]
+    },
+    {
+        question: "What are RESTful APIs, and how do they work?",
+        options: [
+            { text: "They use SOAP for communication", correct: false },
+            { text: "They allow communication over HTTP using standard methods", correct: true },
+            { text: "They are not used in web development", correct: false },
+            { text: "They are only for mobile applications", correct: false }
+        ]
+    }
+];
+
+const questionElement = document.getElementById("qnum");
+const answerButtons = document.getElementById("answers");
+const nextButton = document.getElementById("next");
+
+let currentQuestionIndex = 0;
+let score = 0;
+
+function Quiz(){
+    currentQuestionIndex = 0;
+    score = 0;
+    nextButton.innerHTML = "Next";
+    Question();
+}
+
+function Question(){
+    let currentQuestion = questions[currentQuestionIndex];
+    let questionNum = currentQuestionIndex + 1;
+    questionElement.innerHTML = questionNum + ". " + currentQuestion.question;
+
+    currentQuestion.options.forEach(answer => {
+        const button = document.createElement("button");
+        button.innerHTML = answer.text;
+        button.classList.add("btn");
+        answer.button.appendChild(button);
+    });
+}
