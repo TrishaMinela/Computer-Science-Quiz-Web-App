@@ -7,12 +7,50 @@
 
 body {
     background: #c4e79c;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
-.question {
+.answers {
+    display: flex;
+    margin: 100px auto 0;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.answers button {
+    width: 20%;
+    height: 200px;
+    border-radius: 10px;
+}
+
+button {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+button:hover {
+    opacity: 0.7;
+}
+
+button:active {
+    transform: scale(0.97); 
+}
+
+.question-box {
     background: #004aad;
     width: 90%; 
     margin: 100px auto 0;
     border-radius: 10px;
     padding: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.question-box h2 {
+    font-weight: 25px;
+    color: #ffffff;
 }
