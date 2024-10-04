@@ -86,6 +86,7 @@ function Question(){
         const button = document.createElement("button");
         button.innerHTML = answer.text;
         button.classList.add("answer", "btn");
+        button.addEventListener('click', () => selectAnswer(answer));
         answerButtons.appendChild(button);
     });
 
@@ -93,3 +94,26 @@ function Question(){
 }
 
 Quiz();
+
+//If answer is correct
+function selectAnswer(answer) {
+    const buttons = document.querySelectorAll('.answer');
+    //User won't be able to click on other options
+    buttons.forEach(button => {
+        button.disabled = true;
+    })
+
+    const isCorrect = answer.correct;
+    const selected = Array.from(buttons).find(button => button.innerHTML === answer.text);
+
+    if(isCorrect){
+        score++;
+        selected.classList.add('correct');
+    } else {
+        selected.classList.add('incorrect');
+    }
+
+    nextButton.style.display = 'block';
+}
+
+

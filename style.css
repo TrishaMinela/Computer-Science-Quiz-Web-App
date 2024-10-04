@@ -21,6 +21,7 @@ body {
     margin: 50px auto 0;
     justify-content: space-between;
     width: 90%;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .answers button {
@@ -32,7 +33,7 @@ body {
 }
 
 button {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),0 0 20px rgba(255, 255, 255, 0.35);
     cursor: pointer;
     border: none;
     transition: background-color 0.3s, transform 0.1s;
@@ -54,7 +55,7 @@ button:active {
     margin: 50px auto 0;
     border-radius: 10px;
     padding: 30px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),0 0 20px rgba(255, 255, 255, 0.35);
 }
 
 .question-box {
@@ -63,7 +64,7 @@ button:active {
     margin: 50px auto 0;
     border-radius: 10px;
     padding: 30px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),0 0 20px rgba(255, 255, 255, 0.35);
 }
 
 .question-box h2 {
@@ -133,5 +134,23 @@ button:active {
     transition: background-color 0.3s, transform 0.1s;
     width: 20%;
     margin: 50px auto;
-    display: block;
+    display: none;
+}
+
+/* Answer Selection */
+
+.correct {
+    box-shadow: 
+    0 0 20px rgba(255, 255, 255, 0.7), 
+    0 0 30px #4CAF50,
+    0 0 40px #4CAF50;
+    transition: box-shadow 0.3s;
+}
+
+.incorrect {
+    box-shadow: 
+        0 0 20px rgba(255, 255, 255, 0.7), 
+        0 0 30px #f44336, 
+        0 0 40px #f44336;
+        transition: box-shadow 0.3s;
 }
